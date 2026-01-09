@@ -71,3 +71,21 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
     link.href = canvas.toDataURL('image/jpeg', 1.0);
     link.click();
 });
+// Enhance Button ka Logic
+document.getElementById('enhanceBtn').addEventListener('click', function() {
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // Enhancement Filters: Contrast aur Sharpening barhana
+    ctx.filter = 'contrast(1.2) brightness(1.05) saturate(1.1)';
+    
+    // Canvas par mojood image ko dobara redraw karna filters ke sath
+    ctx.drawImage(canvas, 0, 0);
+    
+    // Filter wapas normal karna taakay agli baar double apply na ho
+    ctx.filter = 'none';
+    
+    alert("Image Enhanced Successfully!");
+});
+
+
