@@ -71,21 +71,25 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
     link.href = canvas.toDataURL('image/jpeg', 1.0);
     link.click();
 });
-// Enhance Button ka Logic
+// Purana Enhance code mita kar ye wala dalein
 document.getElementById('enhanceBtn').addEventListener('click', function() {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
-
-    // Enhancement Filters: Contrast aur Sharpening barhana
-    ctx.filter = 'contrast(1.2) brightness(1.05) saturate(1.1)';
     
-    // Canvas par mojood image ko dobara redraw karna filters ke sath
+    // 1. Multiple passes for sharpness
+    ctx.filter = 'contrast(1.4) saturate(1.2) brightness(1.05)';
     ctx.drawImage(canvas, 0, 0);
     
-    // Filter wapas normal karna taakay agli baar double apply na ho
-    ctx.filter = 'none';
+    // 2. Convolution Matrix (Edges ko sharp karne ke liye)
+    // Ye pixels ke darmiyan farq barha deta hai taakay blur kam lage
+    ctx.filter = 'contrast(1.1) blur(0px) brightness(1.0)';
+    ctx.drawImage(canvas, -1, -1);
+    ctx.drawImage(canvas, 1, 1);
     
-    alert("Image Enhanced Successfully!");
+    ctx.filter = 'none';
+    alert("Image Enhancement Completed!");
 });
+
+
 
 
