@@ -75,19 +75,22 @@ document.getElementById('enhanceBtn').addEventListener('click', function() {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     
-    // Step 1: Contrast aur Saturation barhana taakay details ubar kar aayen
-    ctx.filter = 'contrast(1.4) saturate(1.2) brightness(1.05)';
+    // Balanced Filters: Contrast ko 1.4 se kam karke 1.15 par rakha hai
+    // Taakay andheray hisson (Shadows) ki details nazar aati rahein
+    ctx.filter = 'brightness(1.2) contrast(1.15) saturate(1.1) sepia(0.05)';
+    
     ctx.drawImage(canvas, 0, 0);
-
-    // Step 2: Manual Sharpening Layer
-    // Image ko thora sa shift karke dobara draw karne se edges sharp lagte hain
-    ctx.globalAlpha = 0.5;
-    ctx.drawImage(canvas, -0.5, -0.5);
+    
+    // Sharpness barhanay ke liye halka sa shift (lekin andhera kiye bagair)
+    ctx.globalAlpha = 0.3;
+    ctx.drawImage(canvas, -0.2, -0.2);
     ctx.globalAlpha = 1.0;
     
     ctx.filter = 'none';
-    alert("Image Enhanced! Try to download and check.");
+    alert("Balanced Enhancement Applied! Details should be visible now.");
 });
+
+
 
 
 
