@@ -77,7 +77,8 @@ document.getElementById('enhanceBtn').addEventListener('click', function() {
     
     // Balanced Filters: Contrast ko 1.4 se kam karke 1.15 par rakha hai
     // Taakay andheray hisson (Shadows) ki details nazar aati rahein
-    ctx.filter = 'brightness(1.2) contrast(1.15) saturate(1.1) sepia(0.05)';
+    ctx.filter = 'contrast(1.2) brightness(1.1) saturate(1.1)'; 
+    ctx.imageSmoothingEnabled = false;
     
     ctx.drawImage(canvas, 0, 0);
     
@@ -89,6 +90,7 @@ document.getElementById('enhanceBtn').addEventListener('click', function() {
     ctx.filter = 'none';
     alert("Balanced Enhancement Applied! Details should be visible now.");
 });
+
 
 
 
