@@ -71,24 +71,25 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
     link.href = canvas.toDataURL('image/jpeg', 1.0);
     link.click();
 });
-// Purana Enhance code mita kar ye wala dalein
 document.getElementById('enhanceBtn').addEventListener('click', function() {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     
-    // 1. Multiple passes for sharpness
+    // Step 1: Contrast aur Saturation barhana taakay details ubar kar aayen
     ctx.filter = 'contrast(1.4) saturate(1.2) brightness(1.05)';
     ctx.drawImage(canvas, 0, 0);
-    
-    // 2. Convolution Matrix (Edges ko sharp karne ke liye)
-    // Ye pixels ke darmiyan farq barha deta hai taakay blur kam lage
-    ctx.filter = 'contrast(1.1) blur(0px) brightness(1.0)';
-    ctx.drawImage(canvas, -1, -1);
-    ctx.drawImage(canvas, 1, 1);
+
+    // Step 2: Manual Sharpening Layer
+    // Image ko thora sa shift karke dobara draw karne se edges sharp lagte hain
+    ctx.globalAlpha = 0.5;
+    ctx.drawImage(canvas, -0.5, -0.5);
+    ctx.globalAlpha = 1.0;
     
     ctx.filter = 'none';
-    alert("Image Enhancement Completed!");
+    alert("Image Enhanced! Try to download and check.");
 });
+
+
 
 
 
