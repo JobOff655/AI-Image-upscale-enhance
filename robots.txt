@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://joborite.github.io/sitemap.xml
