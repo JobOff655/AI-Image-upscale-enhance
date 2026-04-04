@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://joborite.github.io/sitemap.xml
+Sitemap: https://ai-image-upscale-enhance.vercel.app/sitemap.xml
+
