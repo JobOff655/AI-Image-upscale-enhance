@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Design Portfolio - AI Image Upscaling</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; text-align: center; }
+        .portfolio-card { background: white; max-width: 850px; margin: 0 auto; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h1 { color: #1a73e8; }
+        .comparison-wrapper { display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 30px; gap: 20px; }
+        .img-container { flex: 1; min-width: 300px; border: 2px solid #ddd; border-radius: 10px; overflow: hidden; background: #eee; }
+        img { width: 100%; height: auto; display: block; }
+        .label { padding: 10px; background: #333; color: white; font-weight: bold; }
+        .contact-btn { display: inline-block; margin-top: 30px; padding: 12px 25px; background: #28a745; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="portfolio-card">
+    <a href="index.html" style="text-decoration: none; color: #1a73e8;">← Back to Home</a>
+    <h1>Work Samples & Portfolio</h1>
+    <p>Compare the quality: From low-resolution blurry images to high-definition AI enhanced results.</p>
+
+    <div class="comparison-wrapper">
+        <div class="img-container">
+            <div class="label">BEFORE (Low Quality)</div>
+            <img src="before.jpg" alt="Blurry original photo">
+        </div>
+
+        <div class="img-container">
+            <div class="label">AFTER (AI Enhanced)</div>
+            <img src="after.jpg" alt="Clear high quality photo">
+        </div>
+    </div>
+
+    <p style="margin-top: 40px; font-style: italic;">These results are achieved using advanced AI algorithms to restore details and sharpness.</p>
+    
+    <a href="https://vocal.media/" class="contact-btn">Hire Me for Your Project</a>
+</div>
+
+</body>
+</html>
